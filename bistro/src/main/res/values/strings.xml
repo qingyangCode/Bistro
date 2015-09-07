@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">QiaoLePei</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_tab_home">首页</string>
+    <string name="main_tab_near">附近</string>
+    <string name="main_tab_order">订单</string>
+    <string name="main_tab_personal">我的</string>
+</resources>

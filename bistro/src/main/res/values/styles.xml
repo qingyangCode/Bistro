@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/dark_gray</item>
+        <item name="android:windowBackground">@color/base</item>
+        <item name="android:textColorHint">@color/gray</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- Toolbar Theme / Apply white arrow -->
+        <item name="colorControlNormal">@color/dark_gray</item>
+
+        <!-- Material Theme -->
+        <item name="colorPrimary">@color/dark_gray</item>
+        <item name="colorPrimaryDark">@color/dark_gray</item>
+        <item name="colorAccent">@color/dark_gray</item>
+
+        <item name="android:statusBarColor" tools:targetApi="21">@color/dark_gray</item>
+        <item name="android:navigationBarColor" tools:targetApi="21">@color/navigation_bar</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="21">true</item>
+
+
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/right_into_left</item>
+        <item name="android:activityOpenExitAnimation">@anim/right_out_left</item>
+        <!--<item name="android:activityCloseEnterAnimation">@anim/left_into_right</item>-->
+        <item name="android:activityCloseExitAnimation">@anim/left_out_right</item>
+    </style>
+    <style name="AppTheme.NoStatusBar" parent="@style/AppTheme">
+        <item name="android:windowTranslucentStatus" tools:targetApi="21">true</item>
+    </style>
+    <style name="Bottom_Tab_Bar_TextView">
+        <item name="android:textColor">@color/home_bottom_tab_bar_textview</item>
+        <item name="android:textSize">@dimen/dimen_12dip</item>
+    </style>
+
+
+</resources>

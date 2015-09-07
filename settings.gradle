@@ -1,0 +1,4 @@
+include ':bistro'
+
+include ':mainlibrary'
+project(':mainlibrary').projectDir = new File('../android_libs/mainlibrary')

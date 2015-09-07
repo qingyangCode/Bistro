@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="dark_gray">#7b7769</color>
+    <color name="base">#fafaf5</color>
+    <color name="gray">#a3a090</color>
+    <color name="black_alpha">#1a000000</color>
+    <color name="navigation_bar">@android:color/black</color>
+    <color name="transparent">#00000000</color>
+</resources>
