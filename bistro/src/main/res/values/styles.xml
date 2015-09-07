@@ -37,7 +37,7 @@
     </style>
     <style name="Bottom_Tab_Bar_TextView">
         <item name="android:textColor">@color/home_bottom_tab_bar_textview</item>
-        <item name="android:textSize">@dimen/dimen_12dip</item>
+        <item name="android:textSize">12dp</item>
     </style>
 
 

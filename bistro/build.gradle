@@ -6,17 +6,12 @@ android {
 
     defaultConfig {
         applicationId "com.qingyang.bistro"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+
     useLibrary 'org.apache.http.legacy'
 }
 
@@ -26,4 +21,52 @@ dependencies {
     compile 'com.android.support:cardview-v7:+'
     compile 'com.android.support:recyclerview-v7:+'
     compile project(':mainlibrary')
+}
+
+
+def coverageSourceDirs = [
+        '/src/main/java'
+]
+
+
+task codeCoverage(type: JacocoReport, dependsOn: "testDebug") {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports"
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+    classDirectories = fileTree(
+            dir: './build/intermediates/classes/debug',
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/*$ViewInjector*.*',
+                       '**/*$InjectAdapter.class',
+                       '**/*$ModuleAdapter.class',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*']
+    )
+    additionalSourceDirs = files(coverageSourceDirs)
+    sourceDirectories = files(coverageSourceDirs)
+    executionData = files('build/jacoco/testDevDebug.exec')
+
+    Map<String, String> renamedFilesMap = [:]
+
+    // Rename files with '$$' before generating report, and then rename back after
+    doFirst {
+        new File('common/build/intermediates/classes/debug').eachFileRecurse { file ->
+            if (file.name.contains('$$')) {
+                String oldPath = file.path
+                String newPath = oldPath.replace('$$', '$')
+                file.renameTo(newPath)
+                renamedFilesMap[newPath] = oldPath
+            }
+        }
+    }
+    doLast {
+        renamedFilesMap.each() {
+            newPath, oldPath ->
+                new File(newPath).renameTo(oldPath)
+        }
+    }
 }
