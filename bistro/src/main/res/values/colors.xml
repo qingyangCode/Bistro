@@ -7,6 +7,7 @@
     <color name="gray">#a3a090</color>
     <color name="black_alpha">#1a000000</color>
     <color name="navigation_bar">@android:color/black</color>
-    <color name="transparent">#00000000</color>
+    <color name="transprent">#00000000</color>
     <color name="blue">#ff0099cc</color>
+    <color name="common_press_bg">#1A000000</color>
 </resources>

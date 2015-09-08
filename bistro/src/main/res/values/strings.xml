@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QiaoLePei</string>
+    <string name="app_name">泡陌</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -7,4 +7,5 @@
     <string name="main_tab_near">附近</string>
     <string name="main_tab_order">订单</string>
     <string name="main_tab_personal">我的</string>
+    <string name="main_exit_message">再按一次退出</string>
 </resources>

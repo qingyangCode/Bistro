@@ -1,6 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +27,7 @@
             android:orientation="horizontal" >
 
             <RelativeLayout
-                android:id="@+id/bottom_tab_bar_home"
+                android:id="@+id/rl_bottom_1"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -55,7 +57,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/bottom_tab_bar_group"
+                android:id="@+id/rl_bottom_2"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -85,7 +87,7 @@
 
 
             <FrameLayout
-                android:id="@+id/bottom_tab_bar_shop"
+                android:id="@+id/rl_bottom_3"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -118,24 +120,10 @@
                         android:text="@string/main_tab_order"
                         android:textColor="@color/bottom_text_selector" />
                 </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="right" >
-
-                    <ImageView
-                        android:layout_width="7dip"
-                        android:layout_height="7dip"
-                        android:layout_marginRight="8dip"
-                        android:layout_marginTop="8dip"
-                        android:visibility="gone" />
-                </LinearLayout>
-                <!-- android:src="@drawable/red_point" -->
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/bottom_tab_bar_mine"
+                android:id="@+id/rl_bottom_4"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -168,22 +156,20 @@
                         android:text="@string/main_tab_personal"
                         android:textColor="@color/bottom_text_selector" />
                 </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="right" >
-
-                    <ImageView
-                        android:id="@+id/iv_push"
-                        android:layout_width="7dip"
-                        android:layout_height="7dip"
-                        android:layout_marginRight="8dip"
-                        android:layout_marginTop="8dip"
-                        android:visibility="gone" />
-                </LinearLayout>
             </FrameLayout>
         </LinearLayout>
+
+        <com.qingyang.bistro.ui.DraggableFlagView
+            xmlns:dfv="http://schemas.android.com/apk/res/com.wangjie.draggableflagview"
+            android:id="@+id/near_point"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="23dp"
+            android:layout_marginBottom="33dp"
+            app:hintcolor="#FF3B30"
+            />
 
         <LinearLayout
             android:id="@+id/container"
