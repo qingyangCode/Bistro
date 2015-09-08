@@ -10,8 +10,48 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        buildConfigField "String", "MAT_ADVERTISER_ID", "\"23132\""
+        buildConfigField "String", "MAT_CONVERSION_ID", "\"9fd337a1392516465a0e1f40e8794c20\""
+    }
+    signingConfigs {
+        debug {
+            storeFile file('deploy/debug.keystore')
+        }
+        release {
+            keyAlias 'qingqingworkroom'
+            keyPassword 'qingqing123'
+            storeFile file('deploy/keystore.jks')
+            storePassword 'qingqing123'
+        }
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            buildConfigField "boolean", "ENABLE_CRASH_REPORT", "true"
+            buildConfigField "boolean", "ENABLE_DEVMODE", "true"
+            buildConfigField "boolean", "ENABLE_LOG", "true"
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "ENABLE_CRASH_REPORT", "false"
+            buildConfigField "boolean", "ENABLE_DEVMODE", "false"
+            buildConfigField "boolean", "ENABLE_LOG", "false"
+            signingConfig signingConfigs.release
+        }
     }
 
+    productFlavors {
+        qiaolepei {
+            applicationId 'com.qingyang.qiaolepei'
+            buildConfigField "int", "DB_VERSION", "1"
+            buildConfigField "int", "LOG_LEVEL", "android.util.Log.VERBOSE"
+            buildConfigField "String", "SERVER_URL", "\"http://124.127.106.196:80\""
+        }
+    }
     useLibrary 'org.apache.http.legacy'
 }
 
@@ -21,6 +61,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:+'
     compile 'com.android.support:recyclerview-v7:+'
     compile project(':mainlibrary')
+    compile 'com.nineoldandroids:library:2.4.0'
 }
 
 
@@ -48,7 +89,7 @@ task codeCoverage(type: JacocoReport, dependsOn: "testDebug") {
     )
     additionalSourceDirs = files(coverageSourceDirs)
     sourceDirectories = files(coverageSourceDirs)
-    executionData = files('build/jacoco/testDevDebug.exec')
+//    executionData = files('build/jacoco/testDevDebug.exec')
 
     Map<String, String> renamedFilesMap = [:]
 
