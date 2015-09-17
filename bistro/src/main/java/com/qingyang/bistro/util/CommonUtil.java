@@ -1,4 +1,4 @@
-package com.qingyang.bistro;
+package com.qingyang.bistro.util;
 
 import android.content.Context;
 

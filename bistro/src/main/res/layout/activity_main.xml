@@ -159,7 +159,7 @@
             </FrameLayout>
         </LinearLayout>
 
-        <com.qingyang.bistro.ui.DraggableFlagView
+        <com.qingyang.bistro.ui.wdiget.DraggableFlagView
             xmlns:dfv="http://schemas.android.com/apk/res/com.wangjie.draggableflagview"
             android:id="@+id/near_point"
             android:layout_width="20dp"

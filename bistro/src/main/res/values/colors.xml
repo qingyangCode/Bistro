@@ -5,9 +5,15 @@
     <color name="dark_gray">#7b7769</color>
     <color name="base">#fafaf5</color>
     <color name="gray">#a3a090</color>
+    <color name="gray_333">#333333</color>
     <color name="black_alpha">#1a000000</color>
     <color name="navigation_bar">@android:color/black</color>
     <color name="transprent">#00000000</color>
     <color name="blue">#ff0099cc</color>
     <color name="common_press_bg">#1A000000</color>
+    <color name="app_bg">#ffffff</color>
+    <color name="gray_555">#555555</color>
+    <color name="green_blue_p">#A7BE00</color>
+    <color name="common_green">#D1EE00</color>
+
 </resources>

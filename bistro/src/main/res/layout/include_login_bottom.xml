@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_sf_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:alpha="@dimen/common_alpha_72_percent"
+            android:text="使用其他三方登录"
+            android:textColor="@color/gray_333"
+            android:textSize="19dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_sf_login_title"
+            android:background="@color/black"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_sf_login_title"
+            android:background="@color/black"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_facebook"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_facebook"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/onboarding_facebook_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_facebook"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/gray_333"
+                android:textSize="16dp"
+                android:text="脸书"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_wechat"
+            android:layout_width="0dp"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_wechat"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/onboarding_wechat_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_wechat"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/gray_333"
+                android:text="微信"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

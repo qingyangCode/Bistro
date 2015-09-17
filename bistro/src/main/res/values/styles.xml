@@ -51,4 +51,53 @@
         <item name="android:textSize">19dp</item>
     </style>
 
+    <!--clearableEditText-->
+    <declare-styleable name="ClearableEditText">
+        <attr name="hasIcon" format="boolean"/>
+        <attr name="iconRes" format="reference"/>
+        <attr name="iconMarginLeft" format="dimension"/>
+        <attr name="iconMarginRight" format="dimension"/>
+
+        <attr name="clearableEditTextColor" format="color"/>
+        <attr name="clearableEditTextHintColor" format="color"/>
+        <attr name="editTextContent" format="string"/>
+        <attr name="editTextHintContent" format="string"/>
+        <attr name="editTextSize" format="dimension"/>
+        <attr name="editTextAutoFocus" format="boolean"/>
+        <attr name="clearableEditTextBackground" format="reference"/>
+        <attr name="isPassword" format="boolean"/>
+
+        <attr name="clearIconRes" format="reference"/>
+        <attr name="clearIconMarginLeft" format="dimension"/>
+        <attr name="clearIconMarginRight" format="dimension"/>
+
+        <attr name="hasVisibilitySwitch" format="boolean"/>
+        <attr name="visibilitySwitchMarginRight" format="dimension"/>
+        <attr name="visibilitySwitchWidth" format="dimension"/>
+        <attr name="visibilitySwitchHeight" format="dimension"/>
+        <attr name="visibilitySwitchBg" format="reference"/>
+    </declare-styleable>
+    <!--clearableEditText-->
+
+    <style name="loginhome_textview">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">0.4</item>
+        <item name="android:textSize">19dp</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="loginhome_item_value">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">#D1EE00</item>
+        <item name="android:textColorHint">#999999</item>
+    </style>
+
 </resources>

@@ -11,7 +11,7 @@ import com.qingyang.bistro.fragments.HomeFragment;
 import com.qingyang.bistro.fragments.NearByFragment;
 import com.qingyang.bistro.fragments.OrderHomeFragment;
 import com.qingyang.bistro.fragments.UserProfileFragment;
-import com.qingyang.bistro.ui.DraggableFlagView;
+import com.qingyang.bistro.ui.wdiget.DraggableFlagView;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,7 +43,6 @@ public class MainActivity extends Activity
         initView();
         initEvents();
         setSelected(0);
-
         DraggableFlagView near_point = (DraggableFlagView) findViewById(R.id.near_point);
         near_point.setOnDraggableFlagViewListener(this);
         near_point.setText("1");

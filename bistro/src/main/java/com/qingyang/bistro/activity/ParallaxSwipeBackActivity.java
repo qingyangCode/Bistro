@@ -1,6 +1,7 @@
 package com.qingyang.bistro.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,8 +15,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import com.qingyang.bistro.CommonUtil;
+import com.qingyang.bistro.util.CommonUtil;
 import com.qingyang.bistro.R;
+import com.qingyang.mainlibrary.util.LogUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;
@@ -36,16 +38,22 @@ public class ParallaxSwipeBackActivity extends AppCompatActivity implements Slid
     private ImageView shadowImageView;
     private int defaultTranslationX = 100;
     private int shadowWidth = 20;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mContext = this;
         //通过反射来改变SlidingPanelayout的值
         try {
             slidingPaneLayout = new SlidingPaneLayout(this);
             Field f_overHang = SlidingPaneLayout.class.getDeclaredField("mOverhangSize");
             f_overHang.setAccessible(true);
             f_overHang.set(slidingPaneLayout, 0);
-            slidingPaneLayout.setPanelSlideListener(this);
+            if (mContext instanceof MainActivity) {
+                slidingPaneLayout.setPanelSlideListener(null);
+            } else {
+                slidingPaneLayout.setPanelSlideListener(this);
+            }
             slidingPaneLayout.setSliderFadeColor(getResources().getColor(android.R.color.transparent));
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,7 +81,8 @@ public class ParallaxSwipeBackActivity extends AppCompatActivity implements Slid
         //add shadow
         shadowImageView = new ImageView(this);
         shadowImageView.setBackgroundResource(R.mipmap.shadow);
-        shadowImageView.setLayoutParams(new LinearLayout.LayoutParams(shadowWidth, LinearLayout.LayoutParams.MATCH_PARENT));
+        shadowImageView.setLayoutParams(
+                new LinearLayout.LayoutParams(shadowWidth, LinearLayout.LayoutParams.MATCH_PARENT));
         containerLayout.addView(shadowImageView);
         containerLayout.addView(frameLayout);
         containerLayout.setTranslationX(-shadowWidth);
@@ -109,17 +118,26 @@ public class ParallaxSwipeBackActivity extends AppCompatActivity implements Slid
 
     @Override
     public void onPanelClosed(View view) {
-
+        LogUtil.LOGD(TAG, "====== view =======");
     }
 
     @Override
     public void onPanelOpened(View view) {
+        if (mContext instanceof MainActivity) {
+            return;
+        }
         finish();
         this.overridePendingTransition(0, 0);
     }
 
     @Override
     public void onPanelSlide(View view, float v) {
+        if (mContext instanceof MainActivity) {
+            slidingPaneLayout.setPanelSlideListener(null);
+            return;
+        } else {
+            slidingPaneLayout.setPanelSlideListener(this);
+        }
         Log.e(TAG, "onPanelSlide ：" + v);
         //duang duang duang 你可以在这里加入很多特效
         behindImageView.setTranslationX(v * defaultTranslationX - defaultTranslationX);
@@ -155,7 +173,7 @@ public class ParallaxSwipeBackActivity extends AppCompatActivity implements Slid
     public void startParallaxSwipeBackActivty(Activity activity, Intent intent, boolean isFullScreen) {
         screenshots(activity, isFullScreen);
         startActivity(intent);
-        this.overridePendingTransition(R.anim.right_into_left, R.anim.left_out_right);
+        this.overridePendingTransition(R.anim.right_into_left, R.anim.right_out_left);
     }
 
     /**

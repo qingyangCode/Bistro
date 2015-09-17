@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/QiaoLePei.iml" filepath="$PROJECT_DIR$/QiaoLePei.iml" />
       <module fileurl="file://$PROJECT_DIR$/bistro/bistro.iml" filepath="$PROJECT_DIR$/bistro/bistro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mainlibrary/mainlibrary.iml" filepath="$PROJECT_DIR$/mainlibrary/mainlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../android_libs/mainlibrary/mainlibrary.iml" filepath="$PROJECT_DIR$/../android_libs/mainlibrary/mainlibrary.iml" />
     </modules>
   </component>
 </project>

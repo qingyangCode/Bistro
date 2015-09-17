@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.qingyang.bistro.R;
 import java.util.List;
 
@@ -12,9 +14,12 @@ import java.util.List;
  */
 public class LaunchActivity extends Activity{
 
+    private  AsyncTask<Void, Void, Void> loading;
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
+        ButterKnife.inject(this);
     }
 
     @Override
@@ -25,11 +30,11 @@ public class LaunchActivity extends Activity{
     @Override
     protected void onResume() {
         super.onResume();
-        AsyncTask<Void, Void, Void> loading = new AsyncTask<Void, Void, Void>() {
+        loading = new AsyncTask<Void, Void, Void>() {
 
             @Override protected Void doInBackground(Void... voids) {
                 try {
-                    Thread.sleep(1500);
+                    Thread.sleep(5500);
                     Thread.yield();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -42,9 +47,20 @@ public class LaunchActivity extends Activity{
                 startActivity(new Intent(LaunchActivity.this, MainActivity.class));
                 finish();
             }
+
+            @Override protected void onCancelled() {
+                super.onCancelled();
+                startActivity(new Intent(LaunchActivity.this, MainActivity.class));
+                finish();
+            }
         };
 
         loading.execute();
+    }
+
+    @OnClick(R.id.tv_jump)
+    public void onJumpClick() {
+        loading.cancel(true);
     }
 
     @Override

@@ -1,4 +1,21 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'http://download.crashlytics.com/maven' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.0'
+//        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+//apply plugin: 'crashlytics'
+
+repositories {
+    jcenter()
+//    maven { url 'http://download.crashlytics.com/maven' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+}
 
 android {
     compileSdkVersion 23
@@ -49,10 +66,15 @@ android {
             applicationId 'com.qingyang.qiaolepei'
             buildConfigField "int", "DB_VERSION", "1"
             buildConfigField "int", "LOG_LEVEL", "android.util.Log.VERBOSE"
-            buildConfigField "String", "SERVER_URL", "\"http://124.127.106.196:80\""
+            buildConfigField "String", "SERVER_URL", "\"http://bbs.chinapet.com\""
         }
     }
-    useLibrary 'org.apache.http.legacy'
+
+    // dagger compile request
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+//    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -61,53 +83,18 @@ dependencies {
     compile 'com.android.support:cardview-v7:+'
     compile 'com.android.support:recyclerview-v7:+'
     compile project(':mainlibrary')
+    compile 'com.google.dagger:dagger:2.0'
+    compile 'com.google.dagger:dagger-compiler:2.0'
+    compile 'javax.annotation:jsr250-api:1.0'
+    //Drag red point request
     compile 'com.nineoldandroids:library:2.4.0'
+    //clearedittext library
+    compile 'com.android.support:support-annotations:23.0.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
 }
 
 
-def coverageSourceDirs = [
-        '/src/main/java'
-]
+//def coverageSourceDirs = [
+//        '/src/main/java'
+//]
 
-
-task codeCoverage(type: JacocoReport, dependsOn: "testDebug") {
-    group = "Reporting"
-    description = "Generate Jacoco coverage reports"
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-    classDirectories = fileTree(
-            dir: './build/intermediates/classes/debug',
-            excludes: ['**/R.class',
-                       '**/R$*.class',
-                       '**/*$ViewInjector*.*',
-                       '**/*$InjectAdapter.class',
-                       '**/*$ModuleAdapter.class',
-                       '**/BuildConfig.*',
-                       '**/Manifest*.*']
-    )
-    additionalSourceDirs = files(coverageSourceDirs)
-    sourceDirectories = files(coverageSourceDirs)
-//    executionData = files('build/jacoco/testDevDebug.exec')
-
-    Map<String, String> renamedFilesMap = [:]
-
-    // Rename files with '$$' before generating report, and then rename back after
-    doFirst {
-        new File('common/build/intermediates/classes/debug').eachFileRecurse { file ->
-            if (file.name.contains('$$')) {
-                String oldPath = file.path
-                String newPath = oldPath.replace('$$', '$')
-                file.renameTo(newPath)
-                renamedFilesMap[newPath] = oldPath
-            }
-        }
-    }
-    doLast {
-        renamedFilesMap.each() {
-            newPath, oldPath ->
-                new File(newPath).renameTo(oldPath)
-        }
-    }
-}

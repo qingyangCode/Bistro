@@ -1,4 +1,4 @@
-package com.qingyang.bistro.ui;
+package com.qingyang.bistro.ui.wdiget;
 
 import android.app.Activity;
 import android.content.Context;
