@@ -4,7 +4,7 @@
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:id="@+id/layout_top_bar"
-        android:background="@color/white"
+    android:background="@mipmap/top_bg"
         >
 
     <ImageView
@@ -14,15 +14,6 @@
             android:layout_centerVertical="true"
             android:background="@drawable/common_press_bg_selector"
             />
-    <ImageView
-        android:id="@+id/iv_top_bar_sensor"
-        android:layout_width="25dp"
-        android:layout_height="54dp"
-        android:layout_centerVertical="true"
-        android:background="@drawable/common_press_bg_selector"
-        android:layout_toRightOf="@id/iv_top_bar_left"
-        android:visibility="gone"
-        />
     <TextView
             android:id="@+id/tv_top_bar_title"
             style="@style/common_text_style_17dp"
@@ -62,14 +53,5 @@
             android:textColor="#D1EE00"
             android:layout_marginRight="18dp"
             android:layout_alignParentRight="true"
-            />
-
-    <View
-            android:id="@+id/bottom_line"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_alignParentBottom="true"
-            android:background="@mipmap/top_bg"
-            android:visibility="visible"
             />
 </RelativeLayout>

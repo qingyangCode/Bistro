@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/QiaoLePei.iml" filepath="$PROJECT_DIR$/QiaoLePei.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bistro.iml" filepath="$PROJECT_DIR$/Bistro.iml" />
       <module fileurl="file://$PROJECT_DIR$/../android_libs/bannerlibrary/bannerlibrary.iml" filepath="$PROJECT_DIR$/../android_libs/bannerlibrary/bannerlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/bistro/bistro.iml" filepath="$PROJECT_DIR$/bistro/bistro.iml" />
       <module fileurl="file://$PROJECT_DIR$/../android_libs/mainlibrary/mainlibrary.iml" filepath="$PROJECT_DIR$/../android_libs/mainlibrary/mainlibrary.iml" />

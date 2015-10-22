@@ -34,7 +34,7 @@ public class LaunchActivity extends Activity{
 
             @Override protected Void doInBackground(Void... voids) {
                 try {
-                    Thread.sleep(5500);
+                    Thread.sleep(2500);
                     Thread.yield();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

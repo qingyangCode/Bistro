@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import com.qingyang.bistro.util.CommonUtil;
+import com.qingyang.bannerlibrary.util.CommonUtil;
 import com.qingyang.bistro.R;
 import com.qingyang.mainlibrary.util.LogUtil;
 import java.io.File;

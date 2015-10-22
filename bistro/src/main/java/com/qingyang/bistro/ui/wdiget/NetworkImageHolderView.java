@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.qingyang.bannerlibrary.CBPageAdapter;
+import com.qingyang.bannerlibrary.ui.widget.scrollviewpager.CBPageAdapter;
 import com.qingyang.bistro.R;
 
 /**
