@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url 'http://download.crashlytics.com/maven' }
+//        maven { url 'http://download.crashlytics.com/maven' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.1.0'
@@ -14,7 +14,7 @@ apply plugin: 'com.android.application'
 repositories {
     jcenter()
 //    maven { url 'http://download.crashlytics.com/maven' }
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+//    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 
 android {
@@ -66,7 +66,9 @@ android {
             applicationId 'com.qingyang.qiaolepei'
             buildConfigField "int", "DB_VERSION", "1"
             buildConfigField "int", "LOG_LEVEL", "android.util.Log.VERBOSE"
-            buildConfigField "String", "SERVER_URL", "\"http://bbs.chinapet.com\""
+            buildConfigField "String", "SERVER_URL", "\"http://dhc001.pagekite.me\""
+//            buildConfigField "String", "SERVER_URL", "\"http://bbs.chinapet.com\""
+//            http://dhc001.pagekite.me/jiuAPP/login/loginController/loginapp.action
         }
     }
 
@@ -83,6 +85,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:+'
     compile 'com.android.support:recyclerview-v7:+'
     compile project(':mainlibrary')
+    compile project(':bannerlibrary')
     compile 'com.google.dagger:dagger:2.0'
     compile 'com.google.dagger:dagger-compiler:2.0'
     compile 'javax.annotation:jsr250-api:1.0'
@@ -91,6 +94,7 @@ dependencies {
     //clearedittext library
     compile 'com.android.support:support-annotations:23.0.0'
     compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
 }
 
 

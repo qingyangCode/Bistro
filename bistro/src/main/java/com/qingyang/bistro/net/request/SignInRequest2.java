@@ -1,27 +1,27 @@
 package com.qingyang.bistro.net.request;
 
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-import com.qingyang.bistro.util.MD5Util;
 
 /**
  * Created by QingYang on 15/6/17.
  */
-public class SignInRequest {
+public class SignInRequest2 {
 
-
-    @SerializedName("value")
+    @Expose
+    private String id;
+    @Expose
+    private String action;
     @Expose
     private String username;
-
-    @SerializedName("sign")
     @Expose
-    private String userpwd;
+    private String password;
 
-    public SignInRequest(String username, String passowrd){
-        this.username = "J9sNwbvkH1+H0QY2e+tPN2VfIR0qDRwvw2XvX3yIeYOpc21n90Zo3A==";
+    public SignInRequest2(String username, String passowrd){
+        id = "leepet_thread:api";
+        action = "login";
+        this.username = username;
         //this.userpwd = MD5Util.getMD5String(passowrd);
-        this.userpwd = "f34d5613947e52776b6717752fe8a3f1";
+        this.password = passowrd;
 
     }
 
@@ -34,11 +34,11 @@ public class SignInRequest {
     }
 
     public String getUserpwd() {
-        return userpwd;
+        return password;
     }
 
     public void setUserpwd(String userpwd) {
-        this.userpwd = userpwd;
+        this.password = userpwd;
     }
 
 }

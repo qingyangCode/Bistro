@@ -16,15 +16,22 @@
         android:text="USERPROFILE"
         />
 
+    <com.qingyang.mainlibrary.widget.RippleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/common_green"
+        android:padding="20dp">
+
     <Button
         android:id="@+id/btn_login"
-        android:layout_gravity="bottom"
-        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="22dp"
         android:text="登录"
         />
-
+    </com.qingyang.mainlibrary.widget.RippleView>
 
 </LinearLayout>

@@ -4,16 +4,131 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/include_top_header"/>
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/include_top_header"/>
 
-    <TextView
+    <!--<ScrollView-->
+    <!--android:layout_below="@id/top_bar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:scrollbars="none">-->
+    <LinearLayout
+        android:layout_below="@id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@color/black"
-        android:textSize="22dp"
-        android:gravity="center"
-        android:text="HOMEFRAGMENT"
-        />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.qingyang.bannerlibrary.ConvenientBanner
+            android:id="@+id/mBannerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            />
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:paddingBottom="6dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="6dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <com.qingyang.mainlibrary.widget.ClickZoomView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/home_zuopin_def"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1">
+
+                    <com.qingyang.mainlibrary.widget.RoundImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:background="#B3DF7C"/>
+
+                </com.qingyang.mainlibrary.widget.ClickZoomView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="3dp"
+                    android:orientation="vertical">
+
+                    <com.qingyang.mainlibrary.widget.ClickZoomView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        >
+                        <com.qingyang.mainlibrary.widget.RoundImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:background="#FF9B79"/>
+
+                    </com.qingyang.mainlibrary.widget.ClickZoomView>
+
+                    <com.qingyang.mainlibrary.widget.ClickZoomView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        >
+                        <com.qingyang.mainlibrary.widget.RoundImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:background="#78CDEA"/>
+
+                    </com.qingyang.mainlibrary.widget.ClickZoomView>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <com.qingyang.mainlibrary.widget.ClickZoomView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    >
+                    <com.qingyang.mainlibrary.widget.RoundImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:background="#FF9BA9"/>
+
+                </com.qingyang.mainlibrary.widget.ClickZoomView>
+
+                <com.qingyang.mainlibrary.widget.ClickZoomView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="1"
+                    >
+                    <com.qingyang.mainlibrary.widget.RoundImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:background="#F7D56F"/>
+
+                </com.qingyang.mainlibrary.widget.ClickZoomView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--</ScrollView>-->
 
 
 </RelativeLayout>

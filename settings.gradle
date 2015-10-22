@@ -2,3 +2,6 @@ include ':bistro'
 
 include ':mainlibrary'
 project(':mainlibrary').projectDir = new File('../android_libs/mainlibrary')
+
+include ':bannerlibrary'
+project(':bannerlibrary').projectDir = new File('../android_libs/bannerlibrary')

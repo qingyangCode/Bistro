@@ -5,4 +5,8 @@ package com.qingyang.bistro.view;
  */
 public interface LoginHomeView {
 
+    void showProgress();
+
+    void dismissProgress();
+
 }

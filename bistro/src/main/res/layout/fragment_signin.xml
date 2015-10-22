@@ -58,7 +58,7 @@
                     style="@style/loginhome_item_value"
                     android:gravity="center_vertical|left"
                     android:hint="请输入用户名"
-                    android:text=""
+                    android:text="admin"
                     android:inputType="textEmailAddress|textNoSuggestions"
                     android:imeOptions="actionNext"
                     android:textColor="@color/gray_555"
@@ -104,7 +104,7 @@
                     android:gravity="center_vertical|left"
                     android:inputType="textPassword"
                     android:hint="请输入密码"
-                    android:text=""
+                    android:text="admin"
                     android:imeOptions="actionDone"
                     android:textColor="@color/gray_555"
                     />
@@ -125,6 +125,10 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <com.qingyang.mainlibrary.widget.RippleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
             <Button
                 android:id="@+id/btn_signIn"
                 android:layout_width="match_parent"
@@ -138,6 +142,7 @@
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 />
+            </com.qingyang.mainlibrary.widget.RippleView>
 
             <TextView
                 android:id="@+id/tv_forget"

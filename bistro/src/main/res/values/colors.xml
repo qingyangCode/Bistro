@@ -15,5 +15,6 @@
     <color name="gray_555">#555555</color>
     <color name="green_blue_p">#A7BE00</color>
     <color name="common_green">#D1EE00</color>
+    <color name="bg_banner">#EA789B</color>
 
 </resources>

@@ -134,4 +134,10 @@ public class MainActivity extends Activity
             // System.exit(0);
         }
     }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        //        super.onSaveInstanceState(outState);
+    }
 }
